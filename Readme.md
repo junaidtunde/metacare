@@ -6,6 +6,8 @@ This is a test project that acts as a wrapper over swappi.dev, star wars reposit
 
 This app is hosted on heroku, and can be accessed on (https://meta-care.herokuapp.com/api-docs/)
 
+The structure of the env file, required to run locally is in .env.example file
+
 ## Installation
 
 ```bash
