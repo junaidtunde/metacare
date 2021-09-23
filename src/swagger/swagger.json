@@ -1,0 +1,144 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Metacare Documentation",
+        "description": "Documentation for Metacare endpoints",
+        "license": {
+            "name": "Metacare",
+            "url": "https://metacare.herokuapp.com/api-docs/#/"
+        }
+    },
+    "host": "metacare.herokuapp.com",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Movies",
+            "description": "API for metacare movies"
+        }
+    ],
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/movies": {
+            "get": {
+                "tags": [
+                    "Movies"
+                ],
+                "summary": "Gets the movies list.",
+                "responses": {
+                    "200": {
+                        "description": "Successfully gotten the movies list information"
+                    },
+                    "500": {
+                        "description": "Error occurred while fetching movies list"
+                    }
+                }
+            }
+        },
+        "/movies/{movie_id}/characters": {
+            "get": {
+                "tags": [
+                    "Characters"
+                ],
+                "parameters": [
+                    {
+                        "name": "movie_id",
+                        "in": "path",
+                        "description": "These should be passed",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "summary": "Gets the movie characters for a movie whose movie_id is passed.",
+                "responses": {
+                    "200": {
+                        "description": "Successfully retrieved all movie characters"
+                    },
+                    "500": {
+                        "description": "Error occurred while fetching characters for a movie"
+                    }
+                }
+            }
+        },
+        "/movies/{movie_id}/comments": {
+            "get": {
+                "tags": [
+                    "Comments"
+                ],
+                "parameters": [
+                    {
+                        "name": "movie_id",
+                        "in": "path",
+                        "description": "These should be passed",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "summary": "Gets the movie comments for a movie whose movie_id is passed.",
+                "responses": {
+                    "200": {
+                        "description": "Gotten the list of movie comments"
+                    },
+                    "500": {
+                        "description": "Error occurred while fetching comments for a movie"
+                    }
+                }
+            }
+        },
+        "/movies/{movie_id}/comment/add": {
+            "post": {
+                "tags": [
+                    "Comments"
+                ],
+                "description": "Adds new comment for a movie",
+                "summary": "Used to add an anonymous comment for a movie",
+                "parameters": [
+                    {
+                        "name": "comment",
+                        "in": "body",
+                        "description": "These should be passed",
+                        "schema": {
+                            "$ref": "#/definitions/Comment"
+                        }
+                    }
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Successfully added new anonymous comment"
+                    },
+                    "500": {
+                        "description": "An unexpected error occurred, while saving an anonymous comment"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Comment": {
+            "required": [
+                "message"
+            ],
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
