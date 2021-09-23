@@ -6,10 +6,10 @@
         "description": "Documentation for Metacare endpoints",
         "license": {
             "name": "Metacare",
-            "url": "https://metacare.herokuapp.com/api-docs/#/"
+            "url": "https://meta-care.herokuapp.com/api-docs/#/"
         }
     },
-    "host": "metacare.herokuapp.com",
+    "host": "meta-care.herokuapp.com",
     "basePath": "/",
     "tags": [
         {
