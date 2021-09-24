@@ -25,6 +25,7 @@ class Controller {
             for await (const movie of data.results) {
                 const numberOfComments = await repository.count({ movieId: movie.episode_id });
                 const movieData = {
+                    id: movie.episode_id,
                     title: movie.title,
                     opening_crawl: movie.opening_crawl,
                     release_date: movie.release_date,
@@ -79,6 +80,7 @@ class Controller {
             const { feet: totalHeightFeet, inches: totalHeightInches } = convertCmToFt(totalHeight);
             
             movie = {
+                id: movie.episode_id,
                 title: movie.title,
                 opening_crawl: movie.opening_crawl,
                 release_date: movie.release_date,
