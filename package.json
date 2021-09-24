@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Test CRUD API",
   "main": "index.js",
+  "engines" : { 
+    "node" : "^12" 
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon --watch './**/*.ts' --exec ts-node ./src/index.ts",
