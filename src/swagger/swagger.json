@@ -33,7 +33,7 @@
                 "tags": [
                     "Movies"
                 ],
-                "summary": "Gets the movies list.",
+                "summary": "Gets the movies list. Please use id as movie_id in subsequent queries",
                 "responses": {
                     "200": {
                         "description": "Successfully gotten the movies list information"
